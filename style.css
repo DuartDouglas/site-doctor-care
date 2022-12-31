@@ -1,0 +1,695 @@
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   list-style: none;
+}
+
+:root {
+   font-size: 62.5%;
+
+   --brand-green: hsl(170, 100%, 26%);
+   --brand-green-light: hsl(148, 23%, 89%);
+   --brand-green-light-02: hsl(180, 14%, 97%);
+   --brand-beige: hsl(39, 100%, 97%);
+   --brand-green-hover: hsl(170, 100%, 14%);
+   --gray-headline: hsl(210, 11%, 15%);
+   --gray-paragraph:hsl(210, 9%, 31%);
+   --white: hsl(0, 0%, 100%);
+   
+   --header-height: 7.2rem;
+   --margin-wrapper-mobile: 2.4rem; 
+   --margin-wrapper: 10rem;
+
+}
+
+html,
+body {
+   width: 100%;
+   height: 100%;
+   background-color: var(--brand-green-light);
+}
+
+body {
+   font-family: 'DM Sans', sans-serif;
+}
+
+
+/*==================== HEADER - NAV ================================*/
+#header {
+   height: var(--header-height);
+   background: var(--brand-green-light);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding-inline: 2.5rem;
+
+   position: fixed;
+   top: 0;
+   width: 100vw;
+   z-index: 100;
+}
+
+#menu {
+   display: none;
+}
+
+nav {
+   display: flex;
+}
+
+#bt-OpenMenu {
+   background: none;
+   border: none;
+   cursor: pointer;
+}
+
+#bt-CloseMenu {
+   display: none;
+}
+
+#social-links {
+   display: none;
+}
+
+/*=============== HEADER - NAV - scroll===================*/
+
+#header.navScroll { 
+   background: var(--brand-green);
+   height: var(--header-height);
+   position: fixed;
+   width: 100vw;
+   padding-inline: 4rem;
+}
+
+#header.navScroll #logo path {
+   fill: hsl(0, 0%, 100%);
+}
+
+#header.navScroll #bt-OpenMenu path {
+   stroke: hsl(0, 0%, 100%);
+}
+
+/*======= HEADER - NAV - MENU EXPANDED - MOBILE =========*/
+
+#body.openMenu #header {
+   display: flex;
+}
+
+#body.openMenu section {
+   display: none;
+}
+
+#body.openMenu {
+   overflow: hidden;
+}
+
+#body.openMenu #header {
+   background: var(--brand-green);
+}
+
+#body.openMenu #bt-CloseMenu {
+   background: none;
+   border: none;
+   padding-right: 1rem;
+}
+
+#body.openMenu #logo path {
+   fill: hsl(0, 0%, 100%);
+}
+
+#body.openMenu #bt-OpenMenu path {
+   stroke: hsl(0, 0%, 100%);
+}
+
+#body.openMenu #nav {
+   margin-top: var(--header-height);
+   background: var(--brand-green);
+   width: 100vw;
+   height: 100vh;
+   
+   display: flex;
+   justify-content: center;
+
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+#body.openMenu #bt-OpenMenu {
+   display: none;
+}
+
+#body.openMenu #bt-CloseMenu {
+   display: flex;
+}
+
+#body.openMenu #menu {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 4.8rem;
+   padding-top: 7rem;
+}
+
+#body.openMenu #menu a {
+   text-decoration: none;
+   font-weight: bold;
+   font-size: 2.4rem;
+   line-height: 3.1rem;
+   color: var(--brand-beige);
+}
+
+#body.openMenu #bt-agendar {
+   border-radius: 4rem;
+   padding: 1.6rem 3.2rem;
+   border: none;
+
+   background: hsl(0, 0%, 100%);
+   color: var(--brand-green);
+   font-weight: bold;
+   font-size: 1.8rem;
+   line-height: 2.3rem;
+   text-transform: uppercase;
+}
+
+#body.openMenu #nav #social-links {
+   display: flex;
+   gap: 3.2rem;
+   padding-top: 0.6rem;
+}
+/*======================== HOME ==========================*/
+
+#home {
+   background: var(--brand-green-light);
+   display: flex;
+   flex-direction: column;
+   padding-inline: var(--margin-wrapper-mobile);
+   padding-top: calc(4.1rem + var(--header-height));
+}
+
+#home div {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+#home #main h3 {
+   color: var(--brand-green);
+   font-weight: bold;
+   font-size: 1.4rem;
+   line-height: 2.1rem;
+   letter-spacing: .2rem;
+
+   /* margin-top: 4.1rem; */
+}
+
+#home #main h1 {
+   text-align: center;
+   color: var(--gray-headline);
+   font-weight: bold;
+   font-size: 3.4rem;
+   line-height: 4.4rem;
+   margin-top: 1.6rem;
+}
+
+#home #main p {
+   text-align: center;
+   color: var(--gray-paragraph);
+   font-weight: 400;
+   font-size: 1.8rem;
+   line-height: 2.7rem;
+   margin-top: 2.4rem;
+}
+
+#home #main button {
+   margin-top: 3.2rem;
+
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+   padding: 1.7rem 3.2rem;
+
+   border: none;
+   border-radius: 4rem;
+
+   color: var(--white);
+   background: var(--brand-green);
+
+   font-size: 1.4rem;
+   font-weight: bold;
+   line-height: 1.8rem;
+   text-transform: uppercase;
+}
+
+#home img {
+   max-width: 100%;
+   object-position: 0 4rem ;
+}
+
+/*==================== STATS =======================*/
+
+#stats {
+   background: var(--brand-beige);
+   margin-inline: var(--margin-wrapper-mobile);
+   padding-block: 4rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 6rem;
+}
+
+#stats h2 {
+   color: var(--gray-headline);
+   text-align: center;
+   font-weight: bold;
+   font-size: 4.8rem;
+   line-height: 6.2rem;
+}
+
+#stats h3 {
+   color: var(--brand-green);
+   font-weight: 400;
+   font-size: 1.6rem;
+   line-height: 2.4rem;
+}
+
+/*==================== Serviços =======================*/
+
+#services {
+   background: var(--brand-green-light-02);
+   text-align: center;
+
+   margin-top: -20rem;
+   position: relative;
+   z-index: -1;
+}
+
+#services h2 {
+   color: var(--brand-green);
+   font-weight: bold;
+   font-size: 1.4rem;
+   line-height: 2.1rem;
+   text-transform: uppercase;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: var(--margin-wrapper-mobile);
+   
+   padding-top: 30rem;
+}
+
+#services h3 {
+   color: var(--gray-headline);
+   font-weight: bold;
+   font-size: 3rem;
+   line-height: 3.9rem;
+   
+   margin-bottom: 6rem;
+}
+
+.service {
+   background: var(--white);
+   margin: var(--margin-wrapper-mobile);
+   margin-top: 3.2rem;
+   padding: 2.4rem;
+
+   text-align: left;
+
+   display: flex;
+   flex-direction: column;
+   gap: 1.6rem;
+
+   border: 1px solid var(--brand-green-light);
+   border-radius: 0.6rem;
+}
+
+#service h4 {
+   color: var(--gray-headline);
+   font-weight: bold;
+   font-size: 2.4rem;
+   line-height: 3.1rem;
+}
+
+#service p {
+   color: var(--gray-paragraph);
+   font-weight: 400;
+   font-size: 1.6rem;
+   line-height: 2.4rem;
+}
+
+.col-B {
+   padding-bottom: 10rem;
+}
+
+/*===================== About =============================*/
+ 
+#about {
+   background: var(--brand-beige);
+   padding-inline: var(--margin-wrapper-mobile);
+   padding-block: 10rem;
+}
+
+#about h2 {
+   color: var(--brand-green);
+   font-weight: bold;
+   font-size: 1.4rem;
+   line-height: 2.1rem;
+   text-transform: uppercase;
+}
+
+#about h3 {
+   color: var(--gray-headline);
+   font-weight: bold;
+   font-size: 3.0rem;
+   line-height: 3.9rem;
+   padding-top: 1.6rem;
+   padding-bottom: 2.4rem;
+}
+
+#about p {
+   color: var(--gray-paragraph);
+   font-weight: 400;
+   font-size: 1.6rem;
+   line-height: 2.4rem;
+   padding-bottom: 6rem;
+}
+
+#about img {
+   width: 100%;
+}
+
+/*==================== Contacts =======================*/
+
+#contacts {
+   background: var(--white);
+   padding-inline: var(--margin-wrapper-mobile);
+   padding-block: 10rem;
+}
+
+#contacts h2 {
+   color: var(--gray-headline);
+   font-weight: bold;
+   font-size: 3rem;
+   line-height: 3.9rem;
+
+   margin-bottom: 3.2rem;
+}
+
+#contacts a {
+   color: var(--gray-paragraph);
+   font-weight: 400;
+   font-size: 1.6rem;
+   line-height: 2.4rem;
+   text-decoration: none;
+   
+   display: flex;
+   gap: 0.8rem;
+
+   margin-bottom: 1.6rem;
+}
+
+#contacts button {
+   background: var(--brand-green);
+   border: none;
+   border-radius: 4rem;
+
+   padding: 1.6rem 3.2rem;
+   
+   color: var(--white);
+   
+   font-weight: bold;
+   font-size: 1.4rem;
+   line-height: 1.8rem;
+   text-transform: uppercase;
+
+   display: flex;
+   align-items: center;
+   gap: 1.6rem;
+
+   margin-top: 3.2rem;
+   margin-bottom: 6rem;
+}
+
+
+
+#contacts img {
+   width: 100%;
+}
+
+/*==================== FOOTER =======================*/
+
+#footer {
+   background: var(--brand-green);
+   padding-inline: var(--margin-wrapper-mobile);
+   display: flex;
+   flex-direction: column;
+   gap: 3rem;
+   padding-block: 6rem;
+}
+
+#footer p {
+   color: var(--brand-beige);
+   font-weight: 400;
+   font-size: 1.6rem;
+   line-height: 2.1rem;
+}
+
+#footer div {
+   display: flex;
+   flex: row;
+   gap: 3.2rem;
+
+}
+
+#backToTopButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 2.3rem;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(100%);
+    transition: 500ms;
+}
+
+#backToTopButton.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/*========================================================*/
+/*==================== versão desk =======================*/
+/*========================================================*/
+
+@media (min-width: 1050px) {
+   #bt-OpenMenu {
+      display: none;
+   }
+
+   #social-links {
+      display: none;
+   }
+
+   #menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3.2rem;
+   }
+
+   #logo {
+      margin-left: 7.5rem;
+   }
+
+   a {
+      text-decoration: none;
+   }
+
+   #menu a {
+   font-weight: bold;
+   font-size: 1.6rem;
+   line-height: 2.1rem;
+   Color: var(--brand-green);
+   }
+
+   
+   #bt-agendar {
+      color: var(--brand-green);
+      background: var(--brand-green-light);
+      border: 1px solid var(--brand-green);
+      border-radius: 4rem;
+      padding: 1rem 2.4rem;
+      
+      font-weight: bold;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+
+      margin-right: var(--margin-wrapper);
+   }
+
+   #header.navScroll #menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3.2rem;
+   }
+   
+   #header.navScroll #menu a {
+      font-weight: bold;
+      font-size: 1.6rem;
+      line-height: 2.1rem;
+      Color: var(--brand-green-light-02);
+   }
+ 
+   #header.navScroll #menu #bt-agendar {
+      color: white;
+      background: var(--brand-green);
+      border: 1px solid white;
+      border-radius: 4rem;
+      padding: 1rem 2.4rem;
+
+      font-weight: bold;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+   } 
+
+   /*================ HOME ==================*/
+   #home {
+      display: flex;
+      flex-direction: row;
+      padding-inline: var(--margin-wrapper);
+      height: 100vh;
+   }
+   
+   #home #main {
+      display: flex;
+      align-items: baseline;
+      margin-top: 8rem;
+   }
+
+   #home #main h1, 
+   #home #main p {
+      text-align: left;
+   }
+   
+   #home #main h1 {
+      font-size: 5rem;
+      line-height: 6.8rem;
+   }
+   
+   #home img {
+      margin-inline: initial;
+      object-position: 0 5rem;
+   }
+   
+/*========================== STATS =====================*/
+   #stats {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-inline: var(--margin-wrapper);
+      padding: 6rem 12rem;
+
+   }
+
+   .stat-one {
+      padding-inline: auto;
+   }
+
+   .stat-two {
+      padding-inline:auto;
+   }
+
+   .stat-center {
+      border-inline: 2px solid var(--brand-green);
+      padding-inline: 10rem;
+   }
+
+/*========================== SERVICES =====================*/
+   #services {
+      padding-inline: 7.5rem;
+      margin-top: -15rem;
+   }
+
+   .col-A {
+      display: flex;
+   }
+
+   .col-B {
+      display: flex;
+      padding-bottom: 16rem;
+   }
+
+   #services h2 {
+      font-style: bold;
+      font-size: 2.5rem;
+      line-height: 3rem;
+   }
+
+   #services h3 {
+      font-size: 4rem;
+      line-height: 5.2rem;
+   }
+/*========================== ABOUT ========================*/
+
+   #about {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      padding-inline: var(--margin-wrapper);
+      gap: 6.7rem;
+   }
+
+   #about h3 {
+      font-size: 5rem;
+      line-height: 5.2rem;
+      padding-top: 1.6rem;
+      padding-bottom: 2.4rem;
+   }
+
+   #about img {
+      width: 45%;
+   }
+
+   /*===================  CONTACTS ========================*/
+
+   #contacts {
+      padding-inline: var(--margin-wrapper);
+      padding-block: 16rem;
+      display: flex;
+      gap: 14.1rem;
+   }
+   
+   #contacts h2 {
+      font-size: 4rem;
+      line-height: 5.2rem;
+   }
+
+   #contacts img {
+      width: 45%;
+   }
+
+   /*==================== FOOTER =======================*/
+
+   #footer {
+      padding-inline: var(--margin-wrapper);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-block: 8rem;
+   }
+
+
+   #footer div {
+      display: flex;
+      flex: row;
+      gap: 3.2rem;
+   }
+}
+
